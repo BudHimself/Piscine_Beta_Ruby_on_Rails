@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moviemon</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<div id="gameboy">
+  <div class="background">
+
+    <div class="top">
+      <div class="check-on">
+            <div class="off-on">
+              OFF . ON
+            </div>
+       </div>
+    </div>
+       <input type="checkbox" class="check" id="check">
+       <label for="check"><a href="?view=off&button=nil">test</a></label>
+<!--	 <%= image_tag("i.jpeg", :alt => "buttons", :usemap => "#Map") %>-->
+
+         <div class="bootup">Nintendo<sup>Ⓡ</sup></div>
+	 <div class="screen_back"></div>
+	 <div class="mapping">
+	   <%= image_tag("button.png", :class => "buttons_map", :alt => "buttons", :usemap => "#Map") %>
+
+	   <map name="Map" id="Map">
+	     <area alt="" title="" href="?button=select" shape="poly" coords="169,175,215,155,225,165,175,188" />
+	     <area alt="" title="" href="?button=start" shape="poly" coords="261,187,311,166,303,151,253,173" />
+	     <area alt="" title="" href="?button=B" shape="poly" coords="368,128,383,112,378,84,362,76,340,86,334,108,346,125" />
+	     <area alt="" title="" href="?button=A" shape="poly" coords="433,87,451,78,455,58,450,45,432,36,415,42,404,61,412,81" />
+	     <area alt="" title="" href="?button=bottom" shape="rect" coords="85,157,122,123" />
+	     <area alt="" title="" href="?button=right" shape="rect" coords="123,121,159,84" />
+	     <area alt="" title="" href="?button=top" shape="rect" coords="85,86,121,52" />
+	     <area alt="" title="" href="?button=left" shape="rect" coords="52,123,83,86" />
+	   </map>
+	 </div>
+	 <%= yield %>
+        <div class="screen_text">DOT MATRIX WITH STEREO SOUND</div>
+        <div class="brand">GAME BOY</div>
+        <div class="controller"></div>
+        <!--<div class="controller_effect"></div>-->
+        <div class="arrow_h"></div>
+        <div class="arrow_l"></div>
+        <div class="arrow_r"></div>
+        <div class="arrow_b"></div>
+        <div id="ba"></div>
+    <div class="select"></div>
+    <div class="start"></div>
+    <ul id="speakers">
+        <li><li><li><li><li><li>
+      </ul>
+    <div class="phones">
+      <div class="headphones"></div>
+        PHONES
+      <ul class="strip-phones">
+        <li class="strip"></li>
+        <li class="strip"></li>
+        <li class="strip"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<!--
+<body>
+  <div class="gameboy">
+
+
+    <i class="controls_map"></i>
+    <map name="Map" id="Map">
+      <area alt="" title="" href="?button=top&view=<%=$view%>" shape="rect" coords="120,20,180,81" />
+      <area alt="" title="" href="?button=left" shape="rect" coords="61,80,121,140" />
+      <area alt="" title="" href="?button=bottom" shape="rect" coords="179,200,123,141" />
+      <area alt="" title="" href="?button=right" shape="rect" coords="181,83,238,139" />
+      <area alt="" title="" href="?button=select" shape="rect" coords="205,258,266,302" />
+      <area alt="" title="" href="?button=start" shape="rect" coords="290,261,354,313" />
+      <area alt="" title="" href="?button=b" shape="rect" coords="387,72,476,151" />
+      <area alt="" title="" href="?button=a" shape="rect" coords="468,18,563,100" />
+    </map>
+  </div>
+</body>
+-->

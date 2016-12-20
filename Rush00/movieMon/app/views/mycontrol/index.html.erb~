@@ -1,0 +1,32 @@
+<% if $view == "home" %>
+<div class="screen screen_home">
+  <h2>Moviemon</h2>
+  <p>[Start] new game</p>
+  <p>[Select] Load</p>
+</div>
+<% elsif $view == "map" %>
+<div class="screen screen_map">
+  <%= $player %>
+  <%= @button %>
+  <%= $view %>
+  <div class="player" style="left: <%= $player[:position][1] * 10%>%; top: <%= $player[:position][0] * 10%>%;"></div>
+</div>
+<% elsif $view == "battle" %>
+<div class="screen screen_battle">
+  <img src="<%= $selected[:Poster] %>"/>
+  <h3><%= $selected[:Director]%></h3>
+  <p><%= $selected[:Title]%></p>
+  <p>[A] Fight</p>
+  <p>[B] run...</p>
+</div>
+<% elsif $view == "coward" %>
+<div class="screen screen_coward">
+  <p>Press [A] to skip</p>
+</div>
+<% elsif $view == "save" %>
+<% elsif $view == "lost_combat" %>
+<% elsif $view == "moviedex" %>
+<% elsif $view == "load" %>
+<% else %>
+<h5>????</h5>
+<% end %>

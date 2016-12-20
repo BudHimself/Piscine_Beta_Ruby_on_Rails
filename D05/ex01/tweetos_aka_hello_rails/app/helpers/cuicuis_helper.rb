@@ -1,0 +1,2 @@
+module CuicuisHelper
+end

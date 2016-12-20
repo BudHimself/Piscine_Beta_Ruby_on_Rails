@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <title><%=@title%></title>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="navbar navbar-fixed-top navbar-default"><div class="navbar-header"><a href="/" class="navbar-brand cheat-sheet-brand">Rails Beginner Cheat Sheet</a></div>
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Editor", welcome_editor_path %></li>
+          <li><%= link_to "Convention", welcome_convention_path %></li>
+          <li><%= link_to "Ruby", welcome_ruby_path %></li>
+          <li><%= link_to "Console", welcome_console_path %></li>
+          <li><%= link_to "Numbers", welcome_numbers_path %></li>
+          <li><%= link_to "Strings", welcome_strings_path %></li>
+          <li><%= link_to "Arrays", welcome_arrays_path %></li>
+          <li><%= link_to "Hashes", welcome_hashes_path %></li>
+          <li><%= link_to "Rails_App", welcome_rails_app_path %></li>
+          <li><%= link_to "Rails_Command", welcome_rails_commands_path %></li>
+          <li><%= link_to "ERB: Embedded Ruby", welcome_embedded_ruby_path %></li>
+          <li><%= link_to "Quick search", welcome_quick_search_path %></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="content-wrapper">
+     <div class="container ">
+       <section id="main-content">
+         
+<%= yield %>
+
+<%= render "layouts/footer"%>
+</body>
+</html>

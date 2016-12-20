@@ -1,0 +1,58 @@
+<% if $view == "home" %>
+<div class="screen screen_home">
+  <h2>Moviemon</h2>
+  <p>[Start] new game  </p
+  <p>[Select] Load</p>
+</div>
+<% elsif $view == "map" %>
+<div class="screen screen_map">
+  <div class="player" style="left: <%= $player[:position][1] * 10%>%; top: <%= $player[:position][0] * 10%>%;"></div>
+</div>
+<% elsif $view == "battle" %>
+<div class="screen screen_battle">
+  <img src="<%= $selected[:Poster] %>"/>
+  <h3><%= $selected[:Director]%></h3>
+  <p><%= $selected[:Title]%></p>
+  <p>Player life: <%= $player[:life] %><p>
+  <p>Movie life: <%= $selected[:life] %><p>
+  <p class="menu_battle">[A] Fight</p>
+  <p class="menu_battle">[B] run...</p>
+</div>
+<% elsif $view == "coward" %>
+<div class="screen screen_coward">
+  <p>You coward!!!</p>
+  <p>Press [A] to skip</p>
+</div>
+<% elsif $view == "defeat" %>
+<div class="screen screen_defeat">
+  <p>Loser!!!</p>
+  <p>Press [A] to skip</p>
+</div>
+<% elsif $view == "victory" %>
+<div class="screen screen_victory">
+  <p>Awesome. You ve won</p>
+  <p><%= $selected[:Title] %></p>
+  <p>Press [A] to skip</p>
+</div>
+<% elsif $view == "save" %>
+<% elsif $view == "moviedex" %>
+<div class="screen screen_moviedex">
+  <img src="<%= $player[:moviedex][$player[:moviedex_index]][:Poster] %>"/>
+  <h3> <%= $player[:moviedex][$player[:moviedex_index]][:Title] %></h3>
+  <p> <%= $player[:moviedex][$player[:moviedex_index]][:Synopsis] %></p>
+  <p class="toalign"> <%= $player[:moviedex][$player[:moviedex_index]][:Year] %></p>
+  <p class="toalign"> <%= $player[:moviedex][$player[:moviedex_index]][:Director] %></p>
+  <p class="toalign">  <%= $player[:moviedex][$player[:moviedex_index]][:imdbRating] %></p>
+
+</div>
+<% elsif $view == "load" %>
+<div class="screen screen_load">
+  <p <% if $player[:load_index] == 0 %> style="border: 1px solid white" <% end %> ><%= @file[0] %></p>
+  <p <% if $player[:load_index] == 1 %> style="border: 1px solid white" <% end %> ><%= @file[1] %></p>
+  <p <% if $player[:load_index] == 2 %> style="border: 1px solid white" <% end %> ><%= @file[2] %></p>
+
+</div>
+<% else %>
+<div class="screen screen_off">
+</div>
+<% end %>

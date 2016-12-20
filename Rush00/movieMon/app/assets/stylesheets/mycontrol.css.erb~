@@ -1,0 +1,15 @@
+// Place all the styles related to the mycontrol controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.player
+{
+    position: absolute;
+    left: <%= @palyer[0] %>%;
+    top: <%= @player[1] %>%;
+    width: 10%;
+    height: 10%;
+    background: url("player.png");
+    background-size: 100% 100%;
+    z-index: 1000;
+}
